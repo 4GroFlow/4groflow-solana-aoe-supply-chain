@@ -11,7 +11,7 @@ The ultimate goal is to create a complete traceability system for olive oil on t
 - Creating an immutable and transparent supply chain history
 - Verifying the authenticity and origin of the product
 
-One of the main objectives of 4GroFlow is to provide open source code to facilitate the creation of more food traceability tools in the blockchain ecosystem. We believe that transparency in the food supply chain should be accessible to all producers and consumers.
+One of the main objectives of 4GroFlow is to provide **open source code** to facilitate the creation of more food traceability tools in the **Solana** ecosystem. We believe that transparency in the food supply chain should be accessible to all producers and consumers.
 
 In this first iteration, we implement the basic functionality of "tokenizing a message" as a proof of concept.
 
@@ -106,9 +106,9 @@ node read-message.js
 
 - ✅ Anchor Program (on-chain): Completed
 - ⏳ Frontend: In development
-- ✅ Wallet compatibility: Backpack and Phantom supported
+- ⏳ Wallet compatibility: Backpack and Phantom supported
 - ⏳ UI for program interaction: In development
 
 ## 📄 License
 
-This project is licensed under [specify license] 
+This project is licensed under the MIT License
