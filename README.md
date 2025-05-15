@@ -11,6 +11,8 @@ The ultimate goal is to create a complete traceability system for olive oil on t
 - Creating an immutable and transparent supply chain history
 - Verifying the authenticity and origin of the product
 
+One of the main objectives of 4GroFlow is to provide open source code to facilitate the creation of more food traceability tools in the blockchain ecosystem. We believe that transparency in the food supply chain should be accessible to all producers and consumers.
+
 In this first iteration, we implement the basic functionality of "tokenizing a message" as a proof of concept.
 
 ## 🏗️ Project Structure
@@ -26,14 +28,14 @@ The project is divided into two main parts:
 - **On-Chain Framework**: Anchor
 - **Frontend**: React + TypeScript + Vite
 - **Styling**: TailwindCSS
-- **Wallet**: Backpack integration
+- **Wallet**: Backpack and Phantom integration
 
 ## 📋 Requirements
 
-- Node.js v16+
-- Solana CLI v1.16+
-- Anchor Framework v0.28+
-- Backpack wallet installed in browser
+- Node.js v24+
+- Solana CLI v1.18+
+- Anchor Framework v0.29+
+- Backpack or Phantom wallet installed in browser
 
 ## 🚀 Installation
 
@@ -91,11 +93,12 @@ node read-message.js
 - **Create Message**: You can save a message on the blockchain associated with the signer's address.
 - **Verification**: Validations are implemented to ensure messages don't exceed a certain size.
 - **Timestamp**: Each message is saved with a timestamp of the creation moment.
+- **Wallet Integration**: Support for both Backpack and Phantom wallets for transaction signing.
 
 ## 🚧 Next Steps
 
 1. [In development] Frontend with React + Vite
-2. Backpack wallet integration
+2. Complete wallet integration with Backpack and Phantom
 3. User interface improvement
 4. Implementation of additional traceability functionalities
 
@@ -103,8 +106,8 @@ node read-message.js
 
 - ✅ Anchor Program (on-chain): Completed
 - ⏳ Frontend: In development
-- ⏳ Wallet integration: Pending
-- ⏳ UI for program interaction: Pending
+- ✅ Wallet compatibility: Backpack and Phantom supported
+- ⏳ UI for program interaction: In development
 
 ## 📄 License
 
