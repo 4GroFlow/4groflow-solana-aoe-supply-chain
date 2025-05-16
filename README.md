@@ -57,18 +57,47 @@ yarn install
 
 ```bash
 cargo build-sbf
-anchor build
 ```
+
+Note: Use `cargo build-sbf` instead of `anchor build` as newer versions of Solana CLI have updated the SBF compiler naming.
 
 ## 🧪 Testing the program
 
 ### Local tests
 
-To run program tests in a local environment:
+To run program tests in a local environment, you need to properly configure the environment variables. Use the following steps:
 
+1. **Compile the program**:
 ```bash
-anchor test
+cd anchor-program
+cargo build-sbf
 ```
+
+2. **Configure environment variables**:
+```bash
+export ANCHOR_PROVIDER_URL=https://api.devnet.solana.com
+export ANCHOR_WALLET=/path/to/your/wallet.json
+```
+Note: Adjust the wallet path as needed. Default location is usually `~/.config/solana/id.json`.
+
+3. **Run the tests**:
+```bash
+yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts
+```
+
+You can also run all steps in one command:
+```bash
+cd anchor-program && \
+cargo build-sbf && \
+export ANCHOR_PROVIDER_URL=https://api.devnet.solana.com && \
+export ANCHOR_WALLET=~/.config/solana/id.json && \
+yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts
+```
+
+This will execute three test cases:
+- Creating a message on the blockchain
+- Verifying message size validation (max 280 characters)
+- Testing functionality on devnet
 
 ### Interacting with the program on devnet
 
