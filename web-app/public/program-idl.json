@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "name": "anchor_program",
+  "instructions": [
+    {
+      "name": "createMessage",
+      "docs": [
+        "Instrucción para crear un nuevo mensaje en la blockchain",
+        "Este mensaje representa un evento en la cadena de suministro del aceite de oliva"
+      ],
+      "accounts": [
+        {
+          "name": "message",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "author",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "content",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Message",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "author",
+            "type": "publicKey"
+          },
+          {
+            "name": "content",
+            "type": "string"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "MessageTooLong",
+      "msg": "El mensaje no puede exceder los 280 caracteres"
+    }
+  ],
+  "metadata": {
+    "address": "75Y6LyCnaUGwWu7GyDkVTrYBdDw9USyYRkoqEx9Xd43c"
+  }
+}
